@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """ Determines if all the boxes can be opened"""
 
+
 def canUnlockAll(boxes):
+    """boxes let's start"""
     n = len(boxes)
     visited = set()
     stack = [0]
