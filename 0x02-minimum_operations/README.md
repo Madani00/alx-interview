@@ -1,1 +1,1 @@
-min operation
+mmin operation
