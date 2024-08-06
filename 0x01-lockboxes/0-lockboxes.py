@@ -5,15 +5,15 @@
 def canUnlockAll(boxes):
     """boxes let's start"""
     n = len(boxes)
-    visited = set()
+    opened_boxes = set()
+    opened_boxes.add(0)
     stack = [0]
 
     while stack:
-        box = stack.pop()
-        if box not in visited:
-            visited.add(box)
-            for key in boxes[box]:
-                if key not in visited:
-                    stack.append(key)
+        current_box = stack.pop()
+        for key in boxes[current_box]:
+            if key not in opened_boxes and key < n:
+                opened_boxes.add(key)
+                stack.append(key)
 
-    return len(visited) == n
+    return len(opened_boxes) == n
